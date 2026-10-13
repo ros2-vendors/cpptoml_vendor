@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-model
+  href="http://download.ros.org/schema/package_format2.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="2">
+  <name>cpptoml_vendor</name>
+  <version>0.1.0</version>
+  <description>
+    Builds the header-only cpptoml TOML parser (skystrife/cpptoml v0.1.1) and
+    installs its cmake config, so iceoryx_posh can consume it via
+    find_package(cpptoml) with DOWNLOAD_TOML_LIB=OFF instead of its inline
+    ExternalProject download (which runs host git/doxygen that fail under the
+    VxWorks SDK). Must build before iceoryx_posh.
+  </description>
+  <maintainer email="Andrei.Kholodnyi@gmail.com">Andrei Kholodnyi</maintainer>
+  <license>MIT</license> <!-- cpptoml is MIT -->
+
+  <url type="repository">https://github.com/skystrife/cpptoml</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>git</buildtool_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
